@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{ int fm,cm,fn,cn,num1,num2,i,j;
+  printf("\nIngrese la cantidad de filas de la primer matriz: ");
+  scanf("%d",&fm);
+  printf("\nIngrese la cantidad de columnas de la primer matriz: ");
+  scanf("%d",&cm);
+  printf("\nIngrese la cantidad de filas de la segunda matriz: ");
+  scanf("%d",&fn);
+  printf("\nIngrese la cantidad de columnas de la segunda matriz: ");
+  scanf("%d",&cn);
+  int M[fm][cm], N[fn][cn],R[fm][cn];
+
+  if(cm==fn)
+
+  {
+
+
+  for(i=0;i<fm;i++)
+   {for(j=0;j<cm;j++)
+    { printf("\nIngrese los valores de la primer matriz(por fila): ");
+      scanf("%d",&num1);
+      M[i][j]=num1;
+    }
+   }
+
+
+  for(i=0;i<fm;i++)
+    {printf("\n");
+     for(j=0;j<cm;j++)
+        {printf("\t%d",M[i][j]);
+        }
+    }
+  for(i=0;i<fn;i++)
+    {for(j=0;j<cn;j++)
+      { printf("\nIngrese los valores de la segunda matriz(por fila): ");
+        scanf("%d",&num2);
+        N[i][j]=num2;
+      }
+    }
+  for(i=0;i<fn;i++)
+    {printf("\n");
+     for(j=0;j<cn;j++)
+       {printf("\t%d",N[i][j]);}
+     }
+
+ printf("\n");
+ for(i=0;i<fm;i++)
+ {printf("\n");
+    for(j=0;j<cn;j++)
+    { R[i][j]=(M[i][0]*N[0][j])+(M[i][1]*N[1][j]);
+      printf("\t%d",R[i][j]);
+      }}
+  }
+   else
+    printf("\nNo se puede multiplicar");
+}
